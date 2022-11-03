@@ -6,7 +6,7 @@
 # Date of creation: 2022-11-03
 ################################################################################
 
-# Charge getpath function into your global environmnet
+# Charge getpath function into your global environment
 #' @export
 getpath <- function(){
   x <- readClipboard(raw= F)
