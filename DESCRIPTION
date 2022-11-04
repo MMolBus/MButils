@@ -1,7 +1,7 @@
 Package: MButils
 Title: Set of useful functions.
 Authors@R: 
-    person("Manuel", "Molina-Bustamante", role = c("aut", "cre"))
+    person("Manuel", "Molina-Bustamante", email = "manuel.molinab@uam.es", role = c("aut", "cre"))
 Description: Set of useful functions for my daily work.
 Type: Package
 Version: 0.0
