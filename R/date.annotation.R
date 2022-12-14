@@ -14,9 +14,9 @@
 #'
 #' @author Manuel Molina-Bustamante
 #' @examples
-#' date.annotation(x = "2022-12-14 13:09:53 CET")
+#' date.annotation(date = "2022-12-14 13:09:53 CET")
 #' ##"20221214_130953"
-#' getpath()
+#' date.annotation()
 #' ##"20221214_130953"
 #' 
 #' @export
