@@ -5,11 +5,23 @@
 # Author: Manuel Molina-Bustamante
 # Date of creation: 2022-11-03
 ################################################################################
+#R functions
 
-# Charge getpath function into your global environment
+#' Copy directory to R understanding format.
+#' @param x String. File path copied from Windows' "copy file path".
+#'
+#' @return An R usable file path.
+#'
+#' @author Manuel Molina-Bustamante
+#' @examples
+#' getpath(x = "C:/Users/User/Documents")
+#' getpath()
+#' 
 #' @export
-getpath <- function(){
+
+
+getpath <- function(x= "clipboard"){
   x <- readClipboard(raw= F)
-  x <-  gsub("\\\\", "/",x)
+  x <-  gsub("////", "/",x)
   return(x)
 }
