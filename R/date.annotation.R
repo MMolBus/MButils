@@ -18,7 +18,6 @@
 #' ##"20221214_130953"
 #' date.annotation()
 #' ##"20221214_130953"
-#' 
 #' @export
 
 date.annotation <- 
