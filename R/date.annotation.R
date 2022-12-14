@@ -24,7 +24,7 @@
 date.annotation <- 
   function(date = Sys.time()){
   date <-
-    as.character(x)
+    as.character(date)
   date <-
     gsub(".{3}$", "00", date)
   date <-
@@ -32,6 +32,6 @@ date.annotation <-
   date <-
     gsub("-", "", date)
   date <-
-    gsub(" ", "_", date)
+    gsub(" ", "-", date)
   return(date)
 }
