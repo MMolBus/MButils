@@ -16,7 +16,7 @@ An R usable file path.
 Copy directory to R understanding format.
 }
 \examples{
-getpath(x = "C:\Users\User\Documents")
+getpath(x = "C:/Users/User/Documents")
 getpath()
 
 }
