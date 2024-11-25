@@ -7,8 +7,7 @@
 ################################################################################
 #R functions
 
-#' Copy directory to R understanding format.
-#' 
+#' Obtain time balance comparing expected time and employed time in a process
 #' @param expected.time A string. A vector with the expected time to reach
 #' process achievement. It can be the sum of the total expected time or the
 #' partial times that sum up to the total expected time. Format: "hh:mm".
@@ -73,5 +72,6 @@ time.balance <-
     
     return(time.balance)
   }
+
 
 
