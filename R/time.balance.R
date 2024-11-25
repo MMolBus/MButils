@@ -18,8 +18,6 @@
 #' employed in the process but justified as part of the necessary time to
 #' achieve the process. It can be the sum of the total justified time or the
 #' partial times that sum up to the total justified time. Format: "hh:mm".
-
-
 #' 
 #' @return time balance between expected time and employed  + justified time.
 #'
