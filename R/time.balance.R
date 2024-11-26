@@ -28,41 +28,25 @@
 #' 
 #' @export
 time.balance <- 
-  function(expected.time, employed.time, justified.time = 0){
+  function(expected.time, employed.time, justified.time = "00:00"){
     
-    expected.time <- 
-      expected.time	%>% 
-      strptime(format = "%H:%M") 
+    # Convert times to seconds
+    to_seconds <- function(time) {
+      time <- strptime(time, format = "%H:%M")
+      as.numeric(time$hour) * 3600 + as.numeric(time$min) * 60
+    }
     
-    exp.seconds  <- 
-      sum(as.numeric(expected.time$hour) * 3600 +
-            as.numeric(expected.time$min) * 60)
+    exp.seconds <- to_seconds(expected.time)
+    emp.seconds <- to_seconds(employed.time)
+    jus.seconds <- to_seconds(justified.time)
     
-    
-    employed.time <- 
-      employed.time %>% 
-      strptime(format = "%H:%M") 
-    
-    emp.seconds <-
-      sum(as.numeric(employed.time$hour) * 3600 +
-            as.numeric(employed.time$min) * 60)
-    
-    
-    justified.time <- 
-      justified.time %>% 
-      strptime(format = "%H:%M")
-    
-    jus.seconds <-
-      sum(as.numeric(justified.time$hour) * 3600 +
-            as.numeric(justified.time$min) * 60)
-    
-    
+    # Calculate time balance in seconds
     time.balance.sc <- emp.seconds + jus.seconds - exp.seconds
     
+    # Convert seconds back to "hh:mm" format
     hr <- time.balance.sc %/% 3600
     mn <- (time.balance.sc %% 3600) %/% 60
-    remaining_sc <- time.balance.sc %% 60
-    time.balance <- sprintf("%02d:%02d:%02d", hr, mn, remaining_sc)
+    time.balance <- sprintf("%02d:%02d", hr, mn)
     
     return(time.balance)
   }
