@@ -27,10 +27,6 @@
 #' justified.time = "2:00")
 #' 
 #' @export
-
-# calculadora horas
-
-# set function ---------------------------------------------------------------
 time.balance <- 
   function(expected.time, employed.time, justified.time = 0){
     
