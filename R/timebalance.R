@@ -30,24 +30,32 @@ timebalance <-
   function(expected.time, employed.time, justified.time = "00:00"){
     
     # Convert times to seconds
-    to_seconds <- function(time) {
+    to.seconds <- function(time) {
       time <- strptime(time, format = "%H:%M")
       as.numeric(time$hour) * 3600 + as.numeric(time$min) * 60
     }
     
-    exp.seconds <- sum(to_seconds(expected.time))
-    emp.seconds <- sum(to_seconds(employed.time))
-    jus.seconds <- sum(to_seconds(justified.time))
+    exp_seconds <- sum(to_seconds(expected.time))
+    emp_seconds <- sum(to_seconds(employed.time))
+    jus_seconds <- sum(to_seconds(justified.time))
     
     # Calculate time balance in seconds
-    time.balance.sc <- emp.seconds + jus.seconds - exp.seconds
+    time_balance_sc <- emp_seconds + jus_seconds - exp_seconds
     
-    # Convert seconds back to "hh:mm" format
-    hr <- time.balance.sc %/% 3600
-    mn <- (time.balance.sc %% 3600) %/% 60
-    time.balance <- sprintf("%02d:%02d", hr, mn)
+    # define sign of the balance
+    sign_time <- ifelse(time_balance_sc < 0, "-", "")
     
-    return(time.balance)
+    # Calculate hours and minutes
+    hours <- floor(abs(time_balance_sc) / 3600)
+    minutes <- floor((abs(time_balance_sc) %% 3600) / 60)
+    
+    # Format to hh:mm
+    time_balance_hhmm <- sprintf("%s%02d:%02d", sign_time, hours, minutes)
+    
+    # Print the result
+    time_balance_hhmm
+    
+    return(time_balance_hhmm)
   }
 
 
