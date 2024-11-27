@@ -37,5 +37,5 @@ duration <-
 # Calculate end time
 end_time <- start_time + duration
 print(end_time)
-return(endtime)
+return(end_time)
 }
