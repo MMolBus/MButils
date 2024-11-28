@@ -35,9 +35,9 @@ timebalance <-
       as.numeric(time$hour) * 3600 + as.numeric(time$min) * 60
     }
     
-    exp_seconds <- sum(to_seconds(expected.time))
-    emp_seconds <- sum(to_seconds(employed.time))
-    jus_seconds <- sum(to_seconds(justified.time))
+    exp_seconds <- sum(to.seconds(expected.time))
+    emp_seconds <- sum(to.seconds(employed.time))
+    jus_seconds <- sum(to.seconds(justified.time))
     
     # Calculate time balance in seconds
     time_balance_sc <- emp_seconds + jus_seconds - exp_seconds
