@@ -14,7 +14,7 @@ library(testthat)
 test_that("timebalance function works correctly", {
   expect_equal(timebalance(expected.time = "08:00", 
                            employed.time = "5:30", 
-                           justified.time = "2:30"),
+                           justified.time = "2:00"),
                "-00:30")
   expect_equal(timebalance(expected.time = "08:00", 
                            employed.time = "09:00") 
