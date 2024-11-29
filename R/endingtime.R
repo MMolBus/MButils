@@ -32,7 +32,7 @@ start_time <-
   as.POSIXct(paste(Sys.Date(), start.time), format = "%Y-%m-%d %H:%M")
 # Convert duration to period object
 duration <- 
-  hm(duration)
+  lubridate::hm(duration)
 
 # Calculate end time
 end_time <- start_time + duration
