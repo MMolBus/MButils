@@ -4,12 +4,12 @@
 \alias{directorytree}
 \title{Create a Directory Tree}
 \usage{
-directorytree(path, only.directories = T)
+directorytree(path, only_directories = TRUE)
 }
 \arguments{
 \item{path}{A character string specifying the root directory path.}
 
-\item{only.directories}{A logical value indicating whether to include only
+\item{only_directories}{A logical value indicating whether to include only
 directories (TRUE) or both files and directories (FALSE). Default is TRUE.}
 }
 \value{
@@ -21,7 +21,7 @@ path.
 }
 \examples{
 \dontrun{
-tree <- directory.tree("/path/to/directory", only.directories = TRUE)
+tree <- directorytree("/path/to/directory", only_directories = TRUE)
 print(tree)
 }
 }
