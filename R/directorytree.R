@@ -25,7 +25,8 @@
 directorytree <- function(path, only.directories = T) {
   
   # Create a new Node object with the base name of the provided path
-  root <- Node$new(basename(path))
+  root <- data.tree::Node$new(basename(path))
+
   
   # Check if only directories should be listed
   if(only.directories == T){
