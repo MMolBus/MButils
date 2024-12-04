@@ -22,14 +22,14 @@ test_that("directorytree works correctly", {
   file.create(file.path(temp_dir, "subdir1", "file1.txt"))
   file.create(file.path(temp_dir, "subdir2", "file2.txt"))
   
-  # Test with only.directories = TRUE
-  tree <- directorytree(temp_dir, only.directories = TRUE)
+  # Test with only_directories = TRUE
+  tree <- directorytree(temp_dir, only_directories = TRUE)
   expect_true("subdir1" %in% names(tree$children))
   expect_true("subdir2" %in% names(tree$children))
   expect_false("file1.txt" %in% names(tree$children$subdir1$children))
   
-  # Test with only.directories = FALSE
-  tree <- directorytree(temp_dir, only.directories = FALSE)
+  # Test with only_directories = FALSE
+  tree <- directorytree(temp_dir, only_directories = FALSE)
   expect_true("subdir1" %in% names(tree$children))
   expect_true("subdir2" %in% names(tree$children))
   expect_true("file1.txt" %in% names(tree$children$subdir1$children))
