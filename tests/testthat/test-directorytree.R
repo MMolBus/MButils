@@ -1,10 +1,18 @@
-# Load testthat package
+################################################################################
+# MButils::directorytree test 
+# ------------------------------------------------------------------------------
+# Author: Manuel Molina-Bustamante
+# Date of creation: 2024-12-04
+################################################################################
+
+# install packages --------------------------------------------------------
 library(testthat)
 
 # Load MButils
 library(MButils)
 
-# Test for the directorytree function
+# Tests --------------------------------------------------------------------
+
 test_that("directorytree works correctly", {
   
   # Create a temporary directory for testing
